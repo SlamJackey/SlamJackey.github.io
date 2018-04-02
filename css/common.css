@@ -47,21 +47,19 @@ img {
 }
 
 .portfolio > .container .row div:nth-child(4) > a {
-    background-image: url(../img/sell.jpg);
+    background-image: url(../img/php.png);
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
 }
 
 .portfolio > .container .row div:nth-child(5) > a {
-    background-image: url(../img/php.png);
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-
+    background-image: url(../img/music.png);
 }
 
 .portfolio > .container .row div:nth-child(6) > a {
-    background-image: url(../img/music.png);
-
+    background-image: url(../img/sell.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
 }
