@@ -1,0 +1,15 @@
+@import "../static/css/common.css";
+
+body{
+    background:#F6F6F6;
+}
+.main-container{
+    height: auto;
+}
+.main-container .changePass{
+    width: 100%;
+    height: 590px;
+    background: #fff;
+    border-radius: 8px;
+    margin: 20px 0;
+}

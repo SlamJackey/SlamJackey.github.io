@@ -2,165 +2,562 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>个人主页</title>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/xs.css" media="screen and (max-width:768px)">
-    <link rel="stylesheet" href="css/sm.css" media="screen and (min-width:768px) and (max-width:992px)">
-    <link rel="stylesheet" href="css/md.css" media="screen and (min-width:992px) and (max-width:1200px)">
-    <link rel="stylesheet" href="css/lg.css" media="screen and (min-width:1200px)">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>人大-首页</title>
+    <link rel="stylesheet" href="./static/css/common.css">
+    <link rel="stylesheet" href="./static/lib/vue/happy-scroll.css">
+    <link rel="stylesheet" href="./static/css/index.css">
 </head>
 <body>
-<section class="banner">
-    <div class="container">
-        <h1>im Chen Fei</h1>
-        <h2>im a Full Stack Developer</h2>
-        <h3>veni vidi vici</h3>
-        <a href=""><img src="img/arrow.png" alt=""></a>
+<div id="index" v-cloak>
+    <!--头部-->
+    <div class="header-container">
+        <div class="main">
+            <div class="logo">
+                <div>
+                    <img src="static/images/LOGO@2x.png"/>
+                    <p>杭州数字人大云平台</p>
+                </div>
+            </div>
+            <div class="nav">
+                <div>
+                    <a href="./" class="this">首页</a>
+                    <a href="./zzjg">组织架构</a>
+                    <a href="./gwgl">公文管理</a>
+                    <a href="./swsp">事务审批</a>
+                </div>
+            </div>
+            <div class="application" @click="applice()">
+                <img src="static/images/icon_yyzx_default@2x.png" height="56" width="56"/>
+                <p>应用中心</p>
+            </div>
+        </div>
+        <transition name="fade">
+            <div class="application-container" v-show="headerHide">
+                <ul class="main">
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="./static/images/yyzx_jdzs@2x.png">
+                            <p>代表监督治水系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="./static/images/yyzx_yajy@2x.png">
+                            <p>议案建议办理跟踪监督系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="./static/images/yyzx_yslw@2x.png">
+                            <p>预算联网监督接口子系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="./static/images/yyzx_rdxf@2x.png">
+                            <p>人大信访系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="./static/images/yyzx_flzs@2x.png">
+                            <p>任前法律知识考试管理系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="./static/images/yyzx_xxbs@2x.png">
+                            <p>信息报送系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="./static/images/yyzx_lffz@2x.png">
+                            <p>立法辅助系统</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </transition>
     </div>
-</section>
-<section class="portfolio">
-    <div class="container">
-        <h4>portfolio</h4>
-        <span></span>
-        <h5>My Recent Projects , Just "Click" on them to know More.</h5>
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <a href="calculator.html" target="_blank">
-                    <div class="info"><span>MORE >></span></div>
-                </a>
+    <!--主体-->
+    <div class="main-container">
+        <div class="bg"></div>
+        <div class="main">
+            <div class="search-box">
+                <ul>
+                    <li :class="{'this':searchType==1}" @click="searchType=1">公文</li>
+                    <li :class="{'this':searchType==3}" @click="searchType=3">通知</li>
+                    <li :class="{'this':searchType==4}" @click="searchType=4">组织机构</li>
+                </ul>
+                <div>
+                    <input type="text" class="search-input" placeholder="请输入关键字">
+                    <button class="search-btn">
+                        <i></i>
+                    </button>
+                </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <a href="http://cf2017vuektv.duapp.com" target="_blank">
-                    <div class="info"><span>MORE >></span></div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <a href="http://localhost:3000/" target="_blank">
-                    <div class="info"><span>MORE >></span></div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <a href="tornado/html/Dindex.html" target="_blank">
-                    <div class="info"><span>MORE >></span></div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <a href="html/z-index.html" target="_blank">
-                    <div class="info"><span>MORE >></span></div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <a href="pukepai.html" target="_blank">
-                    <div class="info"><span>MORE >></span></div>
-                </a>
+            <div class="center">
+                <div class="part1">
+                    <div class="left tab">
+                        <ul class="tab-nav">
+                            <li :class="{'this':tabNavChoice==v.id}"
+                                v-for="(v,i) in tabNavLists"
+                                @mouseenter="tab(v.id)"
+                                @click="tabNavHref(v.id)">
+                                <img :src="v.imgUrl" v-show="tabNavChoice==v.id">
+                                <p>{{v.title}}</p>
+                            </li>
+                        </ul>
+                        <ul class="tab-main">
+                            <li class="img"
+                                v-show="tabNavChoice==1">
+                                <div class="first">
+                                    <div class="img">
+                                        <img src="static/images/pic_news@2x.png"/>
+                                    </div>
+                                    <div class="word">
+                                        <h1>杭州市人大常委会第二监督小组赴淳安县开展民生实事项目监督</h1>
+                                        <span></span>
+                                        <p>
+                                            近日，杭州市人大常委会第二监督小组赴淳安县开展民生实事项目监督，淳安县人大常委会、县住建局的相关负责人和部分淳安县市人大代表参与监督活动
+                                            调研组赴界首乡严家村、枫树岭镇丰家源村实地检查了农村住房集聚点建设,农村C级危房治理情况，开展入户走访，对胡金荣、丰广祥、汪四月等农村困难家庭的危房改造和修缮情况进行了检查。并听取了淳安县住建局有关负责人关于民生实事农村住房改造项目的推进情况的汇报。
+
+                                            　　截至7月底，淳安县农村C级危房治理83户已全部完成，农村困难户家庭危房改造205户已完成近六层，剩余项目已全部动工，计划10月底前完工，农村农村住房改造建设1350户已全部动工，其中完工259户，剩余计划11月底完工。</p>
+                                        <div class="more">
+                                            <span>查看详情</span><i></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <ul class="list">
+                                    <li>
+                                        <p>关于组织开展市人大机关2018年“百千万”活动轨迹中蹲点调研工作的通知</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>人事代表工委会支部组织学习习近平总书记关于人民代表大会制度的思想</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>市人大机关十九大精神集中轮训和测试实现全覆盖</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li v-show="tabNavChoice==2">
+                                <div class="first">
+
+                                    <div class="word">
+                                        <h1>杭州市人大常委会第二监督小组赴淳安县开展民生实事项目监督</h1>
+                                        <span></span>
+                                        <p>
+                                            近日，杭州市人大常委会第二监督小组赴淳安县开展民生实事项目监督，淳安县人大常委会、县住建局的相关负责人和部分淳安县市人大代表参与监督活动
+                                            调研组赴界首乡严家村、枫树岭镇丰家源村实地检查了农村住房集聚点建设...农村C级危房治理情况，开展入户走访，对胡金荣、丰广祥、汪四月等农村困难家庭的危房改造和修缮情况进行了检查。并听取了淳安县住建局有关负责人关于民生实事农村住房改造项目的推进情况的汇报。
+
+                                            　　截至7月底，淳安县农村C级危房治理83户已全部完成，农村困难户家庭危房改造205户已完成近六层，剩余项目已全部动工，计划10月底前完工，农村农村住房改造建设1350户已全部动工，其中完工259户，剩余计划11月底完工。</p>
+                                    </div>
+                                </div>
+                                <ul class="list">
+                                    <li>
+                                        <p>关于组织开展市人大机关2018年“百千万”活动轨迹中蹲点调研工作的通知</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>关于组织开展市人大机关2018年“百千万”活动轨迹中蹲点调研工作的通知</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>关于组织开展市人大机关2018年“百千万”活动轨迹中蹲点调研工作的通知</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>关于组织开展市人大机关2018年“百千万”活动轨迹中蹲点调研工作的通知</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>人事代表工委会支部组织学习习近平总书记关于人民代表大会制度的思想</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>市人大机关十九大精神集中轮训和测试实现全覆盖</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="img"
+                                v-show="tabNavChoice==3">
+                                <div class="first">
+                                    <div class="img">
+                                        <img src="static/images/pic_news@2x.png"/>
+                                    </div>
+                                    <div class="word">
+                                        <h1>杭州市人大常委会第二监督小组赴淳安县开展民生实事项目监督</h1>
+                                        <span></span>
+                                        <p>
+                                            近日，杭州市人大常委会第二监督小组赴淳安县开展民生实事项目监督，淳安县人大常委会、县住建局的相关负责人和部分淳安县市人大代表参与监督活动
+                                            调研组赴界首乡严家村、枫树岭镇丰家源村实地检查了农村住房集聚点建设...农村C级危房治理情况，开展入户走访，对胡金荣、丰广祥、汪四月等农村困难家庭的危房改造和修缮情况进行了检查。并听取了淳安县住建局有关负责人关于民生实事农村住房改造项目的推进情况的汇报。
+
+                                            　　截至7月底，淳安县农村C级危房治理83户已全部完成，农村困难户家庭危房改造205户已完成近六层，剩余项目已全部动工，计划10月底前完工，农村农村住房改造建设1350户已全部动工，其中完工259户，剩余计划11月底完工。</p>
+                                    </div>
+                                </div>
+                                <ul class="list">
+                                    <li>
+                                        <p>关于组织开展市人大机关2018年“百千万”活动轨迹中蹲点调研工作的通知</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>人事代表工委会支部组织学习习近平总书记关于人民代表大会制度的思想</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>市人大机关十九大精神集中轮训和测试实现全覆盖</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right info">
+                        <div>
+                            <div class="img">
+                                <img src="./static/images/girl.png">
+                                <a href="db-port"></a>
+                            </div>
+                            <span class="name">李珍</span>
+                            <p>市人大机关信息中心办公室主任</p>
+                            <div class="setting">
+
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="javascript:;">
+                                    <span>15</span>
+                                    <p>待办工作</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <span>21</span>
+                                    <p>待阅文件</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <span>30</span>
+                                    <p>未读消息</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="part2">
+                    <div class="calender">
+
+                    </div>
+                    <div class="metting">
+                        <div class="title">
+                            <ul>
+                                <li :class="{'this':mettingChoice==1}" @click="mettingChoice=1">会议室详情</li>
+                                <li :class="{'this':mettingChoice==2}" @click="mettingChoice=1">我的预约</li>
+                            </ul>
+                            <div class="time">
+                                <i class="prev"></i>
+                                <span>2018年9月 <span>第三周</span></span>
+                                <i class="next"></i>
+                            </div>
+                        </div>
+                        <div class="metting-main">
+                            <!-- bind your configurations -->
+                            <happy-scroll color="#D3D3D3" size="5">
+                                <!-- 内层盒子——内容区 -->
+                                <ul v-if="mettingChoice==1">
+                                    <li>
+                                        <h4><i style="background: #FF7547"></i>1101会议室</h4>
+                                        <div>
+                                            <span class="left">
+                                                <i></i>100
+                                            </span>
+                                            <span class="right">
+                                                <i style="background-image: url('./static/images/icon_touying@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_huatong@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_Uxing@2x.png')"></i>
+                                            </span>
+                                        </div>
+                                        <button @click="mettingTips=false">立即预约</button>
+                                    </li>
+                                    <li>
+                                        <h4><i style="background: #27C24C"></i>1102会议室</h4>
+                                        <div>
+                                            <span class="left">
+                                                <i></i>100
+                                            </span>
+                                            <span class="right">
+                                                <i style="background-image: url('./static/images/icon_touying@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_huatong@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_Uxing@2x.png')"></i>
+                                            </span>
+                                        </div>
+                                        <button>立即预约</button>
+                                    </li>
+                                    <li>
+                                        <h4><i style="background: #27C24C"></i>1103会议室</h4>
+                                        <div>
+                                            <span class="left">
+                                                <i></i>100
+                                            </span>
+                                            <span class="right">
+                                                <i style="background-image: url('./static/images/icon_touying@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_huatong@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_Uxing@2x.png')"></i>
+                                            </span>
+                                        </div>
+                                        <button>立即预约</button>
+                                    </li>
+                                    <li>
+                                        <h4><i style="background: #FF7547"></i>1104会议室</h4>
+                                        <div>
+                                            <span class="left">
+                                                <i></i>100
+                                            </span>
+                                            <span class="right">
+                                                <i style="background-image: url('./static/images/icon_touying@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_huatong@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_Uxing@2x.png')"></i>
+                                            </span>
+                                        </div>
+                                        <button>立即预约</button>
+                                    </li>
+                                    <li>
+                                        <h4><i style="background: #FF7547"></i>1105会议室</h4>
+                                        <div>
+                                            <span class="left">
+                                                <i></i>100
+                                            </span>
+                                            <span class="right">
+                                                <i style="background-image: url('./static/images/icon_touying@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_huatong@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_Uxing@2x.png')"></i>
+                                            </span>
+                                        </div>
+                                        <button>立即预约</button>
+                                    </li>
+                                    <li>
+                                        <h4><i style="background: #27C24C"></i>1106会议室</h4>
+                                        <div>
+                                            <span class="left">
+                                                <i></i>100
+                                            </span>
+                                            <span class="right">
+                                                <i style="background-image: url('./static/images/icon_touying@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_huatong@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_Uxing@2x.png')"></i>
+                                            </span>
+                                        </div>
+                                        <button>立即预约</button>
+                                    </li>
+                                    <li>
+                                        <h4><i style="background: #27C24C"></i>1107会议室</h4>
+                                        <div>
+                                            <span class="left">
+                                                <i></i>100
+                                            </span>
+                                            <span class="right">
+                                                <i style="background-image: url('./static/images/icon_touying@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_huatong@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_Uxing@2x.png')"></i>
+                                            </span>
+                                        </div>
+                                        <button>立即预约</button>
+                                    </li>
+                                    <li>
+                                        <h4><i style="background: #FF7547"></i>1108会议室</h4>
+                                        <div>
+                                            <span class="left">
+                                                <i></i>100
+                                            </span>
+                                            <span class="right">
+                                                <i style="background-image: url('./static/images/icon_touying@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_huatong@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_Uxing@2x.png')"></i>
+                                            </span>
+                                        </div>
+                                        <button>立即预约</button>
+                                    </li>
+                                    <li>
+                                        <h4><i style="background: #FF7547"></i>1109会议室</h4>
+                                        <div>
+                                            <span class="left">
+                                                <i></i>100
+                                            </span>
+                                            <span class="right">
+                                                <i style="background-image: url('./static/images/icon_touying@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_huatong@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_Uxing@2x.png')"></i>
+                                            </span>
+                                        </div>
+                                        <button>立即预约</button>
+                                    </li>
+                                    <li>
+                                        <h4><i style="background: #FF7547"></i>1110会议室</h4>
+                                        <div>
+                                            <span class="left">
+                                                <i></i>100
+                                            </span>
+                                            <span class="right">
+                                                <i style="background-image: url('./static/images/icon_touying@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_huatong@2x.png')"></i>
+                                                <i style="background-image: url('./static/images/icon_Uxing@2x.png')"></i>
+                                            </span>
+                                        </div>
+                                        <button>立即预约</button>
+                                    </li>
+                                </ul>
+                                <ul v-if="mettingChoice==2">
+                                    <li>2</li>
+                                    <li>2</li>
+                                    <li>2</li>
+                                    <li>2</li>
+                                    <li>2</li>
+                                    <li>2</li>
+                                    <li>2</li>
+                                    <li>2</li>
+                                    <li>2</li>
+                                    <li>2</li>
+                                    <li>2</li>
+                                </ul>
+                            </happy-scroll>
+                        </div>
+                    </div>
+                </div>
+                <div class="part3 learn">
+                    <h3>学习中心</h3>
+                    <ul>
+                        <li class="laws-regulations">
+                            <a href="javascript:;">
+                                <div>
+                                    <img src="static/images/xxzx_flfg@2x.png"/>
+                                    <p>法律法规</p>
+                                    <div class="hide">
+                                        <p><span>法律法规库</span> 丨 <span>法律释义与问答</span> 丨 <span>新法解读</span></p>
+                                        <div>
+                                            <span>查看更多</span><i></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="bibliography-retrieval">
+                            <a href="javascript:;">
+                                <div>
+                                    <img src="static/images/xxzx_wxjs@2x.png"/>
+                                    <p>文献检索</p>
+                                    <div class="hide">
+                                        <p><span>法律法规库</span> 丨 <span>法律释义与问答</span> 丨 <span>新法解读</span></p>
+                                        <div>
+                                            <span>查看更多</span><i></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="thematic-study">
+                            <a href="javascript:;">
+                                <div>
+                                    <img src="static/images/xxzx_ztxx@2x.png"/>
+                                    <p>专题学习</p>
+                                    <div class="hide">
+                                        <p><span>法律法规库</span> 丨 <span>法律释义与问答</span> 丨 <span>新法解读</span></p>
+                                        <div>
+                                            <span>查看更多</span><i></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</section>
-<section class="about">
-    <div class="container">
-        <h4>about Me</h4>
-        <span></span>
-        <div class="row">
-            <div class="left col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="head"></div>
-                <p class="name">Chen Fei</p>
-                <p class="job">Full Stack Developer</p>
-                <div class="icons">
-                    <a href="" class="icon">&#xe600;</a>
-                    <a href="" class="icon">&#xe60a;</a>
-                    <a href="" class="icon">&#xe675;</a>
+    <!--底部-->
+    <div class="footer-container">
+        <ul class="map">
+            <li>
+                <h4>联系我们</h4>
+                <a href="">在线客服</a>
+                <a href="">问题反馈</a>
+                <a href="">常见问题</a>
+            </li>
+            <li>
+                <h4>APP下载</h4>
+                <img class="app-ewm" src="static/images/ewm_app@2x.png"/>
+            </li>
+            <li>
+                <h4>微信公众号</h4>
+                <img class="wx-ewm" src="static/images/ewm_wx@2x.png"/>
+            </li>
+            <li>
+                <h4>相关链接</h4>
+                <a href="http://www.hzrd.gov.cn/">
+                    <img src="static/images/rendawang@2x.png"/>
+                </a>
+            </li>
+        </ul>
+        <div class="bottom">
+            Copyright &copy 2016.Company name All rights reserved.More
+        </div>
+    </div>
+
+    <!--登录提示窗口-->
+    <transition name="fade">
+        <div class="login-tips" v-show="loginTips">
+            <div class="main">
+                <div class="box">
+                    <div class="title">
+                        <span>系统提示</span>
+                        <span class="close" @click="close()"></span>
+                    </div>
+                    <p>您为首次登录用户，当前密码为初始密码，为了您的账户安全，建议您立即修改密码。</p>
+                    <a href="./setting">修改密码</a>
                 </div>
             </div>
-            <div class="right col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <h2>Professional Skills</h2>
-                <div>
-                    <div>
-                        <span class="icon">&#xe7cd;</span>
-                        <p>HTML5</p>
+        </div>
+    </transition>
+    <!--预约会议室窗口-->
+    <transition name="fade">
+        <div class="metting-tips" v-show="mettingTips">
+            <div class="main">
+                <div class="box">
+                    <div class="title">
+                        <span>预约</span>
+                        <span class="close" @click="mettingTips=false"></span>
                     </div>
-                    <div>
-                        <span class="icon">&#xe674;</span>
-                        <p>CSS3</p>
-                    </div>
-                    <div>
-                        <span class="icon">&#xe624;</span>
-                        <p>Java Script</p>
-                    </div>
-                    <div>
-                        <span class="icon">&#xe612;</span>
-                        <p>JQuery</p>
-                    </div>
-                    <div>
-                        <span class="icon">&#xe70f;</span>
-                        <p>BootStrap</p>
-                    </div>
-                    <div>
-                        <span class="icon">&#xe603;</span>
-                        <p>Nodejs</p>
-                    </div>
-                    <div>
-                        <span class="icon">&#xe790;</span>
-                        <p>Vue.js</p>
-                    </div>
-                    <div>
-                        <span class="icon">&#xe770;</span>
-                        <p>React</p>
-                    </div>
-                    <div>
-                        <span class="icon">&#xe62e;</span>
-                        <p>Git</p>
-                    </div>
-                    <div>
-                        <span class="icon">&#xe677;</span>
-                        <p>MVC</p>
-                    </div>
-                    <div>
-                        <span class="icon">&#xe6bf;</span>
-                        <p>Photo Shop</p>
-                    </div>
-                    <div>
-                        <span class="icon">&#xe6a6;</span>
-                        <p>Adobe Illustrator</p>
+                    <div class="body">
+                        <div class="left">
+                            <div class="detail">
+
+                            </div>
+                            <div class="info"></div>
+                        </div>
+                        <div class="right">
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="contect">
-    <div class="container">
-        <h4>contact me</h4>
-        <span></span>
-        <!--<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et-->
-        <!--dolore magna aliqua.</h5>-->
-        <div class="row">
-            <div class="left col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <form action="">
-                    <input type="text" name="name" value="Name">
-                    <input type="email" name="email" value="Email">
-                    <textarea name="massage" id="" cols="30" rows="10">Massage</textarea>
-                    <input type="submit" value="Send Massage">
-                </form>
-            </div>
-            <div class="right col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <h5>Contact Info</h5>
-                <div>
-                    <span class="icon">&#xe74e;</span>
-                    <p>TaiYuan China</p>
-                </div>
-                <div>
-                    <span class="icon">&#xe693;</span>
-                    <p>18435106593</p>
-                    <p></p>
-                </div>
-                <div>
-                    <span class="icon">&#xe61d;</span>
-                    <p>cf614063673@126.com</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </transition>
+</div>
+
+<script src="./static/lib/jquery/jquery.js"></script>
+<script src="./static/lib/vue/vue.js"></script>
+
+<script src="static/lib/vue/happy-scroll.min.js"></script>
+<script src="./static/lib/vue/happy-scroll.min.js"></script>
+<script src="./static/js/index.js"></script>
+
 </body>
 </html>

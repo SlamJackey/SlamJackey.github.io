@@ -1,0 +1,730 @@
+@import "common.css";
+
+body {
+    background: #f6f6f6;
+}
+
+/*主体开始*/
+.main-container {
+    position: relative;
+}
+
+.main-container .bg {
+    width: 100%;
+    height: 450px;
+    background: url("../images/sy_banner@2x.png");
+    background-size: 100% 100%;
+}
+
+.main-container .main > div {
+    position: absolute;
+}
+
+/*搜索部分*/
+.main-container .main > div.search-box {
+    width: 945px;
+    height: 138px;
+    padding: 20px 30px 30px 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    top: 110px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+.main-container .search-box ul {
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.main-container .search-box ul li {
+    height: 100%;
+    padding: 0 5px;
+    margin: 0 50px 0 10px;
+    color: rgba(255,255,255,0.6);
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.main-container .search-box ul li.this {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    font-weight: bold;
+}
+
+.main-container .search-box > div {
+    width: 100%;
+    height: 48px;
+    margin-top: 15px;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.main-container .search-box > div input {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    padding-left: 20px;
+    padding-right: 120px;
+}
+
+.main-container .search-box > div button {
+    width: 100px;
+    height: 100%;
+    background: #EB4339;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+.main-container .search-box > div button i{
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    background: url("../images/icon_sousuo@2x.png");
+    background-size: 100%;
+
+}
+
+.main-container .main .center {
+    position: initial;
+    width: 1500px;
+    margin-top: -70px;
+}
+
+.main-container .main .center > div {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/*第一部分*/
+.main-container .main .center .part1 {
+    height: 370px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*左部选项卡*/
+.main-container .main .center .part1 .left {
+    width: 1120px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-container .main .center .part1 .left .tab-nav {
+    width: 180px;
+    height: 100%;
+    background: #F9F9F9;
+}
+
+.main-container .main .center .part1 .left .tab-nav li {
+    width: 100%;
+    height: 95px;
+    padding: 40px 56px;
+    cursor: pointer;
+}
+
+.main-container .main .center .part1 .left .tab-nav li.this {
+    color: #fff;
+    height: 180px;
+    background: red;
+}
+
+.main-container .main .center .part1 .left .tab-nav li img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.main-container .main .center .part1 .left .tab-nav li p {
+    width: 100%;
+    text-align: center;
+}
+
+.main-container .main .center .part1 .left .tab-main {
+    width: 940px;
+    height: 100%;
+}
+
+.main-container .main .center .part1 .left .tab-main > li {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+.main-container .main .center .part1 .left .tab-main li .first {
+    width: 100%;
+    height: 225px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-container .main .center .part1 .left .tab-main li:nth-child(2) .first {
+    height: auto;
+}
+
+.main-container .main .center .part1 .left .tab-main li .first .img {
+    width: 400px;
+    height: 100%;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+.main-container .main .center .part1 .left .tab-main li .first .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.main-container .main .center .part1 .left .tab-main li .word {
+    width: 100%;
+    display: inline-block;
+}
+
+.main-container .main .center .part1 .left .tab-main li.img .word {
+    width: 505px;
+}
+
+.main-container .main .center .part1 .left .tab-main li .word h1 {
+    font-weight: normal;
+    font-size:26px;
+    color:#333333
+}
+
+.main-container .main .center .part1 .left .tab-main li .word> span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: red;
+    margin: 10px 0 15px 0;
+}
+
+.main-container .main .center .part1 .left .tab-main li .word p {
+    width: 100%;
+    height: 62px;
+    font-size: 14px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    line-height: 22px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.main-container .main .center .part1 .left .tab-main li .more{
+    margin-top: 25px;
+    font-size:14px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+    line-height:12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+.main-container .main .center .part1 .left .tab-main li .more i{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url("../images/dbfc_more@2x.png");
+    background-size: 100% 100%;
+    margin-left: 5px;
+}
+.main-container .main .center .part1 .left .tab-main li ul li {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.main-container .main .center .part1 .left .tab-main li ul li:first-child {
+    color: #EB4339;
+    font-weight: bold;
+}
+
+.main-container .main .center .part1 .left .tab-main li ul li p {
+    font-size: 16px;
+}
+
+/*右部个人信息*/
+.main-container .main .center .part1 .right {
+    width: 380px;
+    height: 100%;
+    padding: 50px 30px 0 30px;
+    border-left: 2px solid #eee;
+    position: relative;
+}
+
+.main-container .main .center .part1 .info .img{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+}
+.main-container .main .center .part1 .info .img img{
+    width: 100%;
+    height: 100%;
+    border-radius:8px;
+}
+.main-container .main .center .part1 .info .img a{
+    width: 25px;
+    height: 25px;
+    background: url("../images/icon_shenfenqihuan@2x.png");
+    background-size: 100% 100%;
+    position: absolute;
+    right: -10px;
+    bottom: 0;
+    cursor: pointer;
+}
+.main-container .main .center .part1 .info > div {
+    width: 100%;
+    padding-bottom: 40px;
+}
+.main-container .main .center .part1 .info > div .name{
+    display: block;
+    width: 100%;
+    color:#333;
+    font-size:20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0 10px 0;
+}
+.main-container .main .center .part1 .info > div .setting{
+    width: 23px;
+    height: 23px;
+    background: url("../images/icon_shezhi_default@2x.png");
+    background-size: 100% 100%;
+    position: absolute;
+    right: 23px;
+    top: 23px;
+    cursor: pointer;
+}
+.main-container .main .center .part1 .info > div p{
+    color: #999;
+    text-align: center;
+    font-size:16px;
+}
+.main-container .main .center .part1 .info ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-container .main .center .part1 .info ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    text-align: center;
+}
+
+.main-container .main .center .part1 .info ul li span {
+    display: block;
+    font-size: 36px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.main-container .main .center .part1 .info ul li p {
+    color: #999;
+    margin-top: 13px;
+}
+
+/*代表部分*/
+.main-container .main .center .db-1{
+    height: 100px;
+}
+.main-container .main .center .db-1 a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("../images/banner01@2x.png");
+    background-size: 100% 100%;
+}
+.main-container .main .center .db-2 .dbfc{
+    width: 880px;
+    height: 100%;
+    padding:20px;
+    background: #fff;
+    background: url("../images/2018-10-16_142425.png");
+    background-size: 100% 100%;
+}
+
+/*第二部分*/
+.main-container .main .center .part2 {
+    height: 440px;
+    display: flex;
+    justify-content: space-between;
+}
+/*个人日程2*/
+.main-container .main .center .part2 .calender {
+    width: 600px;
+    height: 100%;
+    background: #fff;
+    background: url("../images/2018-10-15_165334.png");
+    background-size: 100% 100%;
+}
+/*会议室*/
+.main-container .main .center .part2 .metting {
+    width: 880px;
+    height: 100%;
+    background: #fff;
+    padding:30px 20px;
+}
+.main-container .main .center .part2 .metting .title{
+    font-size:18px;
+    margin-bottom: 20px;
+    display: flex;
+}
+.main-container .main .center .part2 .metting .title> ul{
+    display: flex;
+    align-items: center;
+    margin-right: 135px;
+}
+.main-container .main .center .part2 .metting .title> ul li{
+    border-bottom: 3px solid rgba(0,0,0,0);
+    color: #999;
+    padding-bottom: 5px;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.main-container .main .center .part2 .metting .title> ul li.this{
+    border-color: #FF814A;
+    font-weight: bold;
+    color: #000;
+}
+.main-container .main .center .part2 .metting .title .time{
+    display: flex;
+    align-items: center;
+    padding-bottom: 7px;
+}
+.main-container .main .center .part2 .metting .title .time .prev{
+    display: inline-block;
+    width:16px;
+    height:16px;
+    background: url("../images/grrc_jiantou_default@2x.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+.main-container .main .center .part2 .metting .title .time > span{
+    font-size:16px;
+    color: #333333;
+    margin: 0 10px;
+}
+.main-container .main .center .part2 .metting .title .time .next{
+    display: inline-block;
+    width:16px;
+    height:16px;
+    background: url("../images/grrc_jiantou_selected@2x.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+
+.main-container .main .center .part2 .metting .metting-main{
+    width: 100%;
+    height: 338px;
+}
+.main-container .main .center .part2 .metting .metting-main ul{
+
+}
+.main-container .main .center .part2 .metting .metting-main ul li{
+    display: inline-block;
+    width:200px;
+    height: 140px;
+    border: 1px solid #EFEFEF;
+    border-radius:8px;
+    margin-right: 5px;
+    overflow: hidden;
+}
+.main-container .main .center .part2 .metting .metting-main ul li h4{
+    font-size:18px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 10px;
+}
+.main-container .main .center .part2 .metting .metting-main ul li h4 i{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    padding-bottom: 10px;
+    margin-right: 10px;
+}
+.main-container .main .center .part2 .metting .metting-main ul li div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.main-container .main .center .part2 .metting .metting-main ul li div .left{
+    display: flex;
+    align-items: center;
+    font-size:14px;
+    color: #666;
+}
+.main-container .main .center .part2 .metting .metting-main ul li div .left i{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../images/2018-10-18_093325.png");
+    background-size:100% 100% ;
+    margin-right: 5px;
+}
+.main-container .main .center .part2 .metting .metting-main ul li div .right i{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-size:100% 100% ;
+    margin-right: 5px;
+}
+.main-container .main .center .part2 .metting .metting-main ul li button{
+    display: block;
+    width:90px;
+    height:32px;
+    background:rgba(216,53,56,1);
+    border-radius:4px;
+    margin: 0 auto;
+    margin-top: 15px;
+    color: #fff;
+    cursor: pointer;
+}
+.happy-scroll-strip--horizontal{
+    display: none;
+}
+    /*第三部分*/
+.main-container .main .center .part3 {
+    height: 342px;
+    padding: 20px;
+    background: #fff;
+}
+
+.main-container .main .center .learn h3 {
+    margin: 5px 0 20px 0;
+}
+
+.main-container .main .center .learn ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-container .main .center .learn ul li {
+    width: 480px;
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.main-container .main .center .learn ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.main-container .main .center .learn ul li:nth-child(1) a{
+    background: url("../images/xxzx_pic_flfg@2x.png");
+    background-size: 100% 100%;
+}
+.main-container .main .center .learn ul li:nth-child(2) a{
+    background: url("../images/xxzx_pic_wxjs@2x.png");
+    background-size: 100% 100%;
+}
+.main-container .main .center .learn ul li:nth-child(3) a{
+    background: url("../images/xxzx_pic_ztxx@2x.png");
+    background-size: 100% 100%;
+}
+.main-container .main .center .learn ul li a> div{
+    width: 100%;
+    height: 100%;
+    padding-top: 53px;
+    background: rgba(0,0,0,0.5);
+}
+.main-container .main .center .learn ul li a > div:hover{
+    background:rgba(235,67,57,0.6);
+    padding-top: 20px;
+    transition: all ease 0.3s;
+}
+.main-container .main .center .learn ul li a div img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.main-container .main .center .learn ul li a div p{
+    font-size:24px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 9px;
+}
+.main-container .main .center .learn ul li a div .hide{
+    display: none;
+}
+.main-container .main .center .learn ul li a > div:hover .hide{
+    display: block!important;
+}
+.main-container .main .center .learn ul li a div .hide p{
+    margin-bottom: 20px;
+    font-size:16px;
+    cursor: default;
+}
+.main-container .main .center .learn ul li a div .hide p span{
+    cursor: pointer;
+}
+.main-container .main .center .learn ul li a div .hide div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-container .main .center .learn ul li a div .hide div span{
+    font-size:14px;
+    color: #fff;
+}
+.main-container .main .center .learn ul li a div .hide div i{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(../images/more@2x.png);
+    background-size: 100% 100%;
+    margin-left: 5px;
+}
+/*主体结束*/
+
+
+/*登录第一次提示窗口*/
+.login-tips{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.5);
+}
+.login-tips .box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -175px;
+    margin-left: -270px;
+    width: 540px;
+    height: 250px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.login-tips .box .title{
+    width: 100%;
+    height: 40px;
+    background: #EB4339;
+    color: #fff;
+    padding: 0 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.login-tips .box .title .close{
+    cursor: pointer;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url("../images/close.png");
+    background-size: 100% 100%;
+}
+.login-tips .box p{
+    width: 100%;
+    font-size: 18px;
+    color: #333;
+    line-height: 35px;
+    padding:0 20px;
+    margin: 50px 0 20px 0;
+}
+.login-tips .box a{
+    display: flex;
+    width: 200px;
+    height: 44px;
+    margin: 0 auto;
+    font-size: 20px;
+    color: #fff;
+    background: #EB4339;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/*预约会议室窗口*/
+.metting-tips{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.5);
+}
+.metting-tips .box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -433px;
+    width: 866px;
+    height: 500px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.metting-tips .box .title{
+    width: 100%;
+    height: 40px;
+    background: #EB4339;
+    color: #fff;
+    padding: 0 20px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    float: left;
+}
+.metting-tips .box .title .close{
+    cursor: pointer;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url("../images/close.png");
+    background-size: 100% 100%;
+}
+.metting-tips .box .body{
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+}
+.metting-tips .box .body .left{
+    display: inline-block;
+    width: 358px;
+    height: 100%;
+    background: #F7F8F8;
+    padding: 20px;
+}
+.metting-tips .box .body .right{
+    display: inline-block;
+    width: 508px;
+    height: 100%;
+    float: right;
+    padding: 20px;
+}
+
+

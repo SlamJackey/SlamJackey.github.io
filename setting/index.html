@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>renda-修改密码</title>
+    <link rel="stylesheet" href="setting.css">
+</head>
+<body>
+<div id="setting">
+    <!--头部-->
+    <div class="header-container">
+        <div class="main">
+            <div class="logo">
+                <div>
+                    <img src="../static/images/LOGO@2x.png"/>
+                    <p>杭州数字人大云平台</p>
+                </div>
+            </div>
+            <div class="nav">
+                <div>
+                    <a href="../">首页</a>
+                    <a href="../zzjg">组织架构</a>
+                    <a href="../gwgl">公文管理</a>
+                    <a href="../swsp">事务审批</a>
+                </div>
+            </div>
+            <div class="application" @click="applice()">
+                <img src="../static/images/icon_yyzx_default@2x.png" height="56" width="56"/>
+                <p>应用中心</p>
+            </div>
+        </div>
+        <transition name="fade">
+            <div class="application-container" v-show="headerHide">
+                <ul class="main">
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_jdzs@2x.png">
+                            <p>代表监督治水系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_yajy@2x.png">
+                            <p>议案建议办理跟踪监督系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_yslw@2x.png">
+                            <p>预算联网监督接口子系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_rdxf@2x.png">
+                            <p>人大信访系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_flzs@2x.png">
+                            <p>任前法律知识考试管理系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_xxbs@2x.png">
+                            <p>信息报送系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_lffz@2x.png">
+                            <p>立法辅助系统</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </transition>
+    </div>
+    <!--主体-->
+    <div class="main-container">
+        <div class="main">
+            <div class="changePass"></div>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="footer-container">
+        <ul class="map">
+            <li>
+                <h4>联系我们</h4>
+                <a href="">在线客服</a>
+                <a href="">问题反馈</a>
+                <a href="">常见问题</a>
+            </li>
+            <li>
+                <h4>APP下载</h4>
+                <img class="app-ewm" src="../static/images/ewm_app@2x.png"/>
+            </li>
+            <li>
+                <h4>微信公众号</h4>
+                <img class="wx-ewm" src="../static/images/ewm_wx@2x.png"/>
+            </li>
+            <li>
+                <h4>相关链接</h4>
+                <a href="http://www.hzrd.gov.cn/">
+                    <img src="../static/images/rendawang@2x.png"/>
+                </a>
+            </li>
+        </ul>
+        <div class="bottom">
+            Copyright &copy 2016.Company name All rights reserved.More
+        </div>
+    </div>
+</div>
+
+<script src="../static/lib/jquery/jquery.min.js"></script>
+<script src="../static/lib/vue/vue.js"></script>
+<script src="setting.js"></script>
+
+</body>
+</html>

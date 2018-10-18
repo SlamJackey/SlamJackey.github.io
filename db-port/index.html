@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人大-首页</title>
+    <link rel="stylesheet" href="db-port.css">
+</head>
+<body>
+<div id="index-db">
+    <div class="header-container">
+        <div class="main">
+            <div class="logo">
+                <div>
+                    <img src="../static/images/LOGO@2x.png"/>
+                    <p>杭州数字人大云平台</p>
+                </div>
+            </div>
+            <div class="nav">
+                <div>
+                    <a href="javascript:;" class="this">首页</a>
+                    <a href="../zzjg">组织架构</a>
+                    <a href="../gwgl">公文管理</a>
+                    <a href="../swsp">事务审批</a>
+                </div>
+            </div>
+            <div class="application" @click="applice()">
+                <img src="../static/images/icon_yyzx_default@2x.png" height="56" width="56"/>
+                <p>应用中心</p>
+            </div>
+        </div>
+        <transition name="fade">
+            <div class="application-container" v-show="headerHide">
+                <ul class="main">
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_jdzs@2x.png">
+                            <p>代表监督治水系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_yajy@2x.png">
+                            <p>议案建议办理跟踪监督系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_yslw@2x.png">
+                            <p>预算联网监督接口子系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_rdxf@2x.png">
+                            <p>人大信访系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_flzs@2x.png">
+                            <p>任前法律知识考试管理系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_xxbs@2x.png">
+                            <p>信息报送系统</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascriptL:;">
+                            <img src="../static/images/yyzx_lffz@2x.png">
+                            <p>立法辅助系统</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </transition>
+    </div>
+    <div class="main-container">
+        <div class="bg"></div>
+        <div class="main">
+            <div class="search-box">
+                <ul>
+                    <li :class="{'this':searchType==1}" @click="searchType=1">公文</li>
+                    <li :class="{'this':searchType==2}" @click="searchType=2">法规</li>
+                    <li :class="{'this':searchType==3}" @click="searchType=3">通知</li>
+                    <li :class="{'this':searchType==4}" @click="searchType=4">决议</li>
+                    <li :class="{'this':searchType==5}" @click="searchType=5">报告</li>
+                    <li :class="{'this':searchType==6}" @click="searchType=6">文鉴</li>
+                </ul>
+                <div>
+                    <input type="text" class="search-input" placeholder="请输入关键字">
+                    <button class="search-btn">
+                        <i></i>
+                    </button>
+                </div>
+            </div>
+            <div class="center">
+                <div class="part1">
+                    <div class="left tab">
+                        <ul class="tab-nav">
+                            <li :class="{'this':tabNavChoice==v.id}"
+                                v-for="(v,i) in tabNavLists"
+                                @mouseenter="tab(v.id)"
+                                @click="tabNavHref(v.id)">
+                                <img :src="v.imgUrl" v-show="tabNavChoice==v.id">
+                                <p>{{v.title}}</p>
+                            </li>
+                        </ul>
+                        <ul class="tab-main">
+                            <li class="img"
+                                v-show="tabNavChoice==1">
+                                <div class="first">
+                                    <div class="img">
+                                        <img src="../static/images/pic_news@2x.png"/>
+                                    </div>
+                                    <div class="word">
+                                        <h1>杭州市人大常委会第二监督小组赴淳安县开展民生实事项目监督</h1>
+                                        <span></span>
+                                        <p>
+                                            近日，杭州市人大常委会第二监督小组赴淳安县开展民生实事项目监督，淳安县人大常委会、县住建局的相关负责人和部分淳安县市人大代表参与监督活动
+                                            调研组赴界首乡严家村、枫树岭镇丰家源村实地检查了农村住房集聚点建设,农村C级危房治理情况，开展入户走访，对胡金荣、丰广祥、汪四月等农村困难家庭的危房改造和修缮情况进行了检查。并听取了淳安县住建局有关负责人关于民生实事农村住房改造项目的推进情况的汇报。
+
+                                            　　截至7月底，淳安县农村C级危房治理83户已全部完成，农村困难户家庭危房改造205户已完成近六层，剩余项目已全部动工，计划10月底前完工，农村农村住房改造建设1350户已全部动工，其中完工259户，剩余计划11月底完工。</p>
+                                        <div class="more">
+                                            <span>查看详情</span><i></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <ul class="list">
+                                    <li>
+                                        <p>关于组织开展市人大机关2018年“百千万”活动轨迹中蹲点调研工作的通知</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>人事代表工委会支部组织学习习近平总书记关于人民代表大会制度的思想</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>市人大机关十九大精神集中轮训和测试实现全覆盖</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li v-show="tabNavChoice==2">
+                                <div class="first">
+
+                                    <div class="word">
+                                        <h1>杭州市人大常委会第二监督小组赴淳安县开展民生实事项目监督</h1>
+                                        <span></span>
+                                        <p>
+                                            近日，杭州市人大常委会第二监督小组赴淳安县开展民生实事项目监督，淳安县人大常委会、县住建局的相关负责人和部分淳安县市人大代表参与监督活动
+                                            调研组赴界首乡严家村、枫树岭镇丰家源村实地检查了农村住房集聚点建设...农村C级危房治理情况，开展入户走访，对胡金荣、丰广祥、汪四月等农村困难家庭的危房改造和修缮情况进行了检查。并听取了淳安县住建局有关负责人关于民生实事农村住房改造项目的推进情况的汇报。
+
+                                            　　截至7月底，淳安县农村C级危房治理83户已全部完成，农村困难户家庭危房改造205户已完成近六层，剩余项目已全部动工，计划10月底前完工，农村农村住房改造建设1350户已全部动工，其中完工259户，剩余计划11月底完工。</p>
+                                    </div>
+                                </div>
+                                <ul class="list">
+                                    <li>
+                                        <p>关于组织开展市人大机关2018年“百千万”活动轨迹中蹲点调研工作的通知</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>关于组织开展市人大机关2018年“百千万”活动轨迹中蹲点调研工作的通知</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>关于组织开展市人大机关2018年“百千万”活动轨迹中蹲点调研工作的通知</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>关于组织开展市人大机关2018年“百千万”活动轨迹中蹲点调研工作的通知</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>人事代表工委会支部组织学习习近平总书记关于人民代表大会制度的思想</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>市人大机关十九大精神集中轮训和测试实现全覆盖</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="img"
+                                v-show="tabNavChoice==3">
+                                <div class="first">
+                                    <div class="img">
+                                        <img src="../static/images/pic_news@2x.png"/>
+                                    </div>
+                                    <div class="word">
+                                        <h1>杭州市人大常委会第二监督小组赴淳安县开展民生实事项目监督</h1>
+                                        <span></span>
+                                        <p>
+                                            近日，杭州市人大常委会第二监督小组赴淳安县开展民生实事项目监督，淳安县人大常委会、县住建局的相关负责人和部分淳安县市人大代表参与监督活动
+                                            调研组赴界首乡严家村、枫树岭镇丰家源村实地检查了农村住房集聚点建设...农村C级危房治理情况，开展入户走访，对胡金荣、丰广祥、汪四月等农村困难家庭的危房改造和修缮情况进行了检查。并听取了淳安县住建局有关负责人关于民生实事农村住房改造项目的推进情况的汇报。
+
+                                            　　截至7月底，淳安县农村C级危房治理83户已全部完成，农村困难户家庭危房改造205户已完成近六层，剩余项目已全部动工，计划10月底前完工，农村农村住房改造建设1350户已全部动工，其中完工259户，剩余计划11月底完工。</p>
+                                    </div>
+                                </div>
+                                <ul class="list">
+                                    <li>
+                                        <p>关于组织开展市人大机关2018年“百千万”活动轨迹中蹲点调研工作的通知</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>人事代表工委会支部组织学习习近平总书记关于人民代表大会制度的思想</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                    <li>
+                                        <p>市人大机关十九大精神集中轮训和测试实现全覆盖</p>
+                                        <span>2018-9-5</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right info">
+                        <div>
+                            <div class="img">
+                                <img src="../static/images/girl.png">
+                                <a href="../"></a>
+                            </div>
+                            <span class="name">李珍</span>
+                            <p>西湖区人大代表</p>
+                            <div class="setting"></div>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="javascript:;">
+                                    <span>15</span>
+                                    <p>待办工作</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <span>21</span>
+                                    <p>待阅文件</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <span>30</span>
+                                    <p>未读消息</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="db-1">
+                    <a href="javascript:;">
+
+                    </a>
+                </div>
+                <div class="part2 db-2">
+                    <div class="calender">
+
+                    </div>
+                    <div class="dbfc">
+                    </div>
+                </div>
+                <div class="part3 learn">
+                    <h3>学习中心</h3>
+                    <ul>
+                        <li class="laws-regulations">
+                            <a href="javascript:;">
+                                <div>
+                                    <img src="../static/images/xxzx_flfg@2x.png"/>
+                                    <p>法律法规</p>
+                                    <div class="hide">
+                                        <p><span>法律法规库</span>  丨  <span>法律释义与问答</span>  丨 <span>新法解读</span></p>
+                                        <div>
+                                            <span>查看更多</span><i></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="bibliography-retrieval">
+                            <a href="javascript:;">
+                                <div>
+                                    <img src="../static/images/xxzx_wxjs@2x.png"/>
+                                    <p>文献检索</p>
+                                    <div class="hide">
+                                        <p><span>法律法规库</span>  丨  <span>法律释义与问答</span>  丨 <span>新法解读</span></p>
+                                        <div>
+                                            <span>查看更多</span><i></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="thematic-study">
+                            <a href="javascript:;">
+                                <div>
+                                    <img src="../static/images/xxzx_ztxx@2x.png"/>
+                                    <p>专题学习</p>
+                                    <div class="hide">
+                                        <p><span>法律法规库</span>  丨  <span>法律释义与问答</span>  丨 <span>新法解读</span></p>
+                                        <div>
+                                            <span>查看更多</span><i></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-container">
+        <ul class="map">
+            <li>
+                <h4>联系我们</h4>
+                <a href="">在线客服</a>
+                <a href="">问题反馈</a>
+                <a href="">常见问题</a>
+            </li>
+            <li>
+                <h4>APP下载</h4>
+                <img class="app-ewm" src="../static/images/ewm_app@2x.png"/>
+            </li>
+            <li>
+                <h4>微信公众号</h4>
+                <img class="wx-ewm" src="../static/images/ewm_wx@2x.png"/>
+            </li>
+            <li>
+                <h4>相关链接</h4>
+                <a href="http://www.hzrd.gov.cn/">
+                    <img src="../static/images/rendawang@2x.png"/>
+                </a>
+            </li>
+        </ul>
+        <div class="bottom">
+            Copyright &copy 2016.Company name All rights reserved.More
+        </div>
+    </div>
+</div>
+
+<script src="../static/lib/jquery/jquery.js"></script>
+<script src="../static/lib/vue/vue.js"></script>
+<script src="./index-db.js"></script>
+
+</body>
+</html>
