@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>人大-组织架构</title>
+    <link rel="stylesheet" href="../static/lib/vue/happy-scroll.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="./zzjg.css">
 </head>
 <body>
-<div id="zzjg">
+<div id="zzjg" v-cloak>
     <div class="header-container">
         <div class="main">
             <div class="logo">
@@ -18,7 +20,7 @@
             <div class="nav">
                 <div>
                     <a href="../">首页</a>
-                    <a href="../zzjg"  class="this">组织架构</a>
+                    <a href="../zzjg" class="this">组织架构</a>
                     <a href="../gwgl">公文管理</a>
                     <a href="../swsp">事务审批</a>
                 </div>
@@ -78,7 +80,113 @@
         </transition>
     </div>
     <div class="main-container">
-
+        <div class="bread-crumb">
+            <div class="main">
+                <div>
+                    当前位置：<a href="../">首页</a><i> > </i><span>组织架构</span>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="main">
+                <div class="group-box">
+                    <happy-scroll color="#D3D3D3" size="5">
+                        <!-- 内层盒子——内容区 -->
+                        <el-input
+                                class="group-search"
+                                placeholder="搜索"
+                                prefix-icon="el-icon-search">
+                        </el-input>
+                        <div class="group-lists" v-for="value in groupLists">
+                            <p @click="toggle(value)">
+                                <i :class="{'open':value.status}"></i><span>{{value.group_name}}({{value.total}})</span>
+                            </p>
+                            <div :class="{'group-item':1,'open':value.status}" v-for="val in value.child">
+                                <p @click="toggle(val)">
+                                    <i :class="{'open':val.status}"></i><span>{{val.group_name}}({{val.total}})</span>
+                                </p>
+                                <div :class="{'open':val.status}" v-for="v in val.child">
+                                    <span :class="{'this':v.id==infoChoice}" @click="infomation(v)">
+                                        <img v-if="v.pic" :src="v.pic">
+                                        <img v-else-if="v.gender==1" src="../static/images/ico-man@2x.png">
+                                        <img v-else src="../static/images/ico-woman@2x.png">
+                                        {{v.name}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </happy-scroll>
+                </div>
+                <div class="chat-box">
+                    <div class="header">
+                        {{info.name}}
+                    </div>
+                    <happy-scroll color="#D3D3D3" size="5">
+                        <div class="chat-list">
+                            <div class="time">
+                                2018.09.15 11:52
+                            </div>
+                            <ul>
+                                <li class="left" v-for="v in chatLists" v-if="v.type==1">
+                                    <div class="pic">
+                                        <img v-if="v.pic" :src="v.pic">
+                                        <img v-else-if="v.gender==1" src="../static/images/ico-man@2x.png">
+                                        <img v-else src="../static/images/ico-woman@2x.png">
+                                        <span>{{v.name}}</span>
+                                    </div>
+                                    <p>{{v.detail}}</p>
+                                </li>
+                                <li class="right" v-for="v in chatLists" v-if="v.type==0">
+                                    <p>{{v.detail}}</p>
+                                    <div class="pic">
+                                        <img v-if="v.pic" :src="v.pic">
+                                        <img v-else-if="v.gender==1" src="../static/images/ico-man@2x.png">
+                                        <img v-else src="../static/images/ico-woman@2x.png">
+                                        <span>{{v.name}}</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </happy-scroll>
+                    <div class="input">
+                        <img class="file" src="../static/images/icon_wenjian@2x.png">
+                        <input type="text" v-model="myChat" placeholder="请输入文字.." @keyup.enter="myChat==''?0:send()">
+                        <img class="emoji" src="../static/images/icon_emoji@2x.png">
+                        <img class="send" src="../static/images/icon_send@2x.png" @click="myChat==''?0:send()">
+                    </div>
+                </div>
+                <div class="info-box">
+                    <img v-if="info.pic" :src="v.pic">
+                    <img v-else-if="info.gender==1" src="../static/images/ico-man@2x.png">
+                    <img v-else src="../static/images/ico-woman@2x.png">
+                    <p>{{info.name}}</p>
+                    <span></span>
+                    <ul>
+                        <li>
+                            <span>性别</span>
+                            <span v-if="info.gender==1">男</span>
+                            <span v-if="info.gender==0">女</span>
+                        </li>
+                        <li>
+                            <span>出生日期</span>
+                            <span>{{info.bor}}</span>
+                        </li>
+                        <li>
+                            <span>手机</span>
+                            <span>{{info.mobile}}</span>
+                        </li>
+                        <li>
+                            <span>邮箱</span>
+                            <span>{{info.email}}</span>
+                        </li>
+                        <li>
+                            <span>所在分组</span>
+                            <span>{{info.group}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="footer-container">
         <ul class="map">
@@ -112,6 +220,9 @@
 
 <script src="../static/lib/jquery/jquery.js"></script>
 <script src="../static/lib/vue/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="../static/lib/vue/happy-scroll.min.js"></script>
+
 <script src="./zzjg.js"></script>
 
 </body>

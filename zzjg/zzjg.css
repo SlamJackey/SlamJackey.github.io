@@ -142,7 +142,289 @@ body {
 
 /*主体开始*/
 .main-container{
-    height: 900px;
+    height: auto;
+}
+/*面包屑*/
+.main-container .bread-crumb{
+    width: 100%;
+    height: 52px;
+    background: #fff;
+}
+.main-container .bread-crumb .main>div{
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+    line-height: 52px;
+    color: #666;
+    font-size:14px;
+    cursor: default;
+}
+.main-container .bread-crumb .main>div a{
+    color: #666;
+    margin-left: 18px;
+}
+.main-container .bread-crumb .main>div i{
+    margin: 0 10px;
+    font-style: normal;
+    color: #999;
+}
+.main-container .bread-crumb .main>div span{
+    color: #999;
+    cursor: default;
+}
+
+/*内容*/
+.main-container .body{
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+}
+.main-container .body .main{
+    display: flex;
+}
+
+/*组织列表*/
+.main-container .body .group-box{
+    display: inline-block;
+    width: 340px;
+   height: 756px;
+    background: #fff;
+    margin-right: 20px;
+    border-radius:4px;
+    padding:30px 20px 20px 20px;
+}
+.main-container .body .group-box .group-search{
+    width: 300px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+.main-container .body .group-box .group-lists{
+    margin-left: 10px;
+    font-size:14px;
+}
+.main-container .body .group-box .group-lists p{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    color: #333;
+    font-weight:bold;
+    cursor: pointer;
+}
+.main-container .body .group-box .group-lists p i{
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: url("../static/images/icon_xiala@2x.png");
+    background-size: 100% 100%;
+    transform: rotate(-90deg);
+}
+.main-container .body .group-box .group-lists > p i.open{
+    transform: rotate(0);
+}
+.main-container .body .group-box .group-lists p span{
+    margin-left: 15px;
+}
+.main-container .body .group-box .group-lists .group-item{
+    height: 0;
+    overflow: hidden;
+}
+.main-container .body .group-box .group-lists .group-item.open{
+    height: auto;
+}
+.main-container .body .group-box .group-lists .group-item p{
+    padding-left:20px ;
+    font-weight: normal;
+    cursor: pointer;
+}
+.main-container .body .group-box .group-lists .group-item p i.open{
+    transform: rotate(0);
+}
+.main-container .body .group-box .group-lists .group-item p span{
+    margin-left: 8px;
+}
+.main-container .body .group-box .group-lists .group-item div{
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+.main-container .body .group-box .group-lists .group-item div.open{
+    height: auto;
+}
+.main-container .body .group-box .group-lists .group-item div span{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 40px;
+    cursor: pointer;
+}
+.main-container .body .group-box .group-lists .group-item div span.this{
+    background: #FDECEB;
+}
+.main-container .body .group-box .group-lists .group-item div span img{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+/*对话部分*/
+.main-container .body .chat-box{
+    display: inline-block;
+    width: 820px;
+    height: 100%;
+    border-right: 1px solid #DDDDDD;
+    border-radius: 4px 0 0 4px;
+    background: linear-gradient(90deg,rgba(241,246,249,1),rgba(233,235,241,1));
+}
+.main-container .body .chat-box .header{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background: #fff;
+    border-radius: 4px 0 0 4px;
+    font-weight:bold;
+}
+.main-container .body .chat-box .chat-list{
+    width: 819px;
+    height: 639px;
+    background:linear-gradient(90deg,rgba(241,246,249,1),rgba(233,235,241,1));
+    border-radius:4px;
+    padding:0 30px
+}
+.main-container .body .chat-box .happy-scroll{
+    width: 819px;
+    height: 639px;
+}
+.main-container .body .chat-box .chat-list .time{
+    font-size:14px;
+    font-family:PingFang-SC-Medium;
+    font-weight:500;
+    color:rgba(170,170,170,1);
+    text-align: center;
+    padding: 30px 0;
+}
+.main-container .body .chat-box .chat-list li{
+    display: flex;
+    margin: 10px 0 15px 0;
+}
+.main-container .body .chat-box .chat-list li.right{
+    justify-content: flex-end;
+}
+.main-container .body .chat-box .chat-list li.right p{
+    margin-right: 22px;
+    padding:0 16px 0 9px
+}
+.main-container .body .chat-box .chat-list li .pic{
+    float: right;
+}
+.main-container .body .chat-box .chat-list .left .pic{
+    margin-right: 22px;
+    margin-left: 0;
+}
+.main-container .body .chat-box .chat-list li .pic img{
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+.main-container .body .chat-box .chat-list li .pic span{
+    display: block;
+    width: 48px;
+    text-align: center;
+    font-size:14px;
+    color:#999999;
+}
+.main-container .body .chat-box .chat-list li p{
+    width: auto;
+    line-height: 46px;
+    font-size:14px;
+    color:rgba(51,51,51,1);
+    background: #fff;
+    border-radius:4px;
+    border:1px solid rgba(255,255,255,1);
+    padding:0 9px 0 16px ;
+    margin: 12px 0;
+}
+.main-container .body .chat-box .input{
+    width: 100%;
+    height: 68px;
+    background: #fff;
+    border-radius: 4px 0 0px 4px;
+    padding: 0 30px 0 20px;
+    display: flex;
+    align-items: center;
+}
+.main-container .body .chat-box .file{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.main-container .body .chat-box input{
+    width: 600px;
+    height: 40px;
+    margin-right: 20px;
+}
+.main-container .body .chat-box .emoji{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.main-container .body .chat-box .send{
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+
+/*个人信息*/
+.main-container .body .info-box{
+    display: inline-block;
+    width: 320px;
+   height: 756px;
+    background: #fff;
+    border-radius:4px;
+    padding:10px;
+}
+.main-container .body .info-box img{
+    display: block;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 50%;
+}
+.main-container .body .info-box p{
+    text-align: center;
+    font-size:16px;
+    font-weight:bold;
+    margin-top: 20px;
+}
+.main-container .body .info-box> span{
+    display: block;
+    width: 100%;
+    border: 1px solid #EFEFEF;
+    margin-top: 50px;
+}
+.main-container .body .info-box ul li{
+    margin:20px 0 40px 0;
+    display: flex;
+    align-items: center;
+}
+.main-container .body .info-box ul li span:first-child{
+    display: block;
+    width: 75px;
+    text-align: right;
+    color: #999;
+    font-size:14px;
+    margin-right: 42px;
+}
+.main-container .body .info-box ul li span:last-child{
+    width: 160px;
+    color: #333333;
+    font-size:14px;
 }
 /*主体结束*/
 
